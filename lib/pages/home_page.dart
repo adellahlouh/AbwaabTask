@@ -15,15 +15,14 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-
-    postProvider = Provider.of<PostProvider>(context ,listen: true);
+    postProvider = Provider.of<PostProvider>(context, listen: true);
 
     return Scaffold(
       appBar: AppBar(
         title: Text('Posts'),
         centerTitle: true,
       ),
-      body: postProvider.currentPosts!= null
+      body: postProvider.currentPosts != null
           ? ListView.separated(
               padding: const EdgeInsets.all(4.0),
               itemBuilder: (_, index) {
@@ -35,8 +34,8 @@ class _HomePageState extends State<HomePage> {
               },
               itemCount: postProvider.currentPosts.length)
           : const Center(
-            child: CircularProgressIndicator(),
-          ),
+              child: CircularProgressIndicator(),
+            ),
     );
   }
 

@@ -28,7 +28,7 @@ class Api {
     }
 
     print('Posts length : ${postList.length}\n'
-            ' Response status code : ${res.statusCode} ');
+        ' Response status code : ${res.statusCode} ');
     return postList ?? [];
   }
 }

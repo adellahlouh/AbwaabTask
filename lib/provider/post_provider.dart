@@ -3,15 +3,16 @@ import 'package:abwaab_task/network/api.dart';
 import 'package:flutter/cupertino.dart';
 
 class PostProvider extends ChangeNotifier {
-
   PostProvider() {
     _listenPosts();
   }
 
-  List<PostModel> currentPosts ;
+  List<PostModel> _currentPosts;
 
   void _listenPosts() async {
-    currentPosts = await Api.getPosts();
+    _currentPosts = await Api.getPosts();
     notifyListeners();
   }
+
+  List<PostModel> get currentPosts => _currentPosts;
 }

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sample Print Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 680px;
+      width: 100%;
+      padding: 40px;
+    }
+
+    .card h1 {
+      font-size: 26px;
+      color: #1a1a2e;
+      margin-bottom: 16px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 24px 0;
+    }
+
+    .info-block {
+      background: #f0f4ff;
+      border-left: 4px solid #4f6ef7;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+    }
+
+    .info-block p {
+      margin: 0;
+      color: #2d3a8c;
+      font-size: 14px;
+    }
+
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #4f6ef7;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 28px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .print-btn:hover {
+      background-color: #3a57d4;
+    }
+
+    .print-btn:active {
+      transform: scale(0.97);
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .card {
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .print-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Monthly Report — April 2026</h1>
+    <hr class="divider" />
+
+    <p>
+      Welcome to the monthly summary report. This document provides an overview
+      of key metrics, highlights, and upcoming milestones for the current period.
+    </p>
+
+    <p>
+      Our team has successfully delivered three major features this month,
+      resolved over 40 bug reports, and improved overall application performance
+      by approximately 18% compared to last month.
+    </p>
+
+    <div class="info-block">
+      <p>
+        <strong>Note:</strong> All figures presented in this report are
+        preliminary and subject to final review by the finance department.
+      </p>
+    </div>
+
+    <p>
+      Next steps include a full QA cycle scheduled for the second week of April,
+      followed by a production deployment on April 14, 2026. Please coordinate
+      with your team leads for any outstanding action items.
+    </p>
+
+    <button class="print-btn" onclick="window.print()">
+      🖨️ Print this page
+    </button>
+  </div>
+</body>
+</html>
